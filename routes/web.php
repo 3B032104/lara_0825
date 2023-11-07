@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+
+    $post = new Post();
+    $post -> title = 'test title';
+    $post -> content = 'test content';
+    $post -> save(); //將新貼文 $post 存入 posts table
+    return 'save, ok.';
 });
