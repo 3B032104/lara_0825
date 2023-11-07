@@ -23,10 +23,15 @@ Route::get('/', function () {
     $post -> save(); //將新貼文 $post 存入 posts table
     return 'save, ok.';
     */
-
+    /* use create() add new data
     Post::create([
         'title' => 'created title',
         'content' => 'created content',
     ]);
+    */
 
+    $post = Post::find(1); //尋找posts table id = 1 data
+    echo '標題：' . $post -> title . '<br>';
+    echo '內容：' . $post -> content . '<br>';
+    dd($post); //dump and die
 });
