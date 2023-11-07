@@ -51,8 +51,16 @@ Route::get('/', function () {
     }
     dd($posts);
     */
-    
-    //use where select posts table id < 10 data
+
+    /*use where select posts table id < 10 data
     $posts = Post::where('id', '<', 10) -> orderby('id', 'DESC')->get();
     dd($posts);
+    */
+
+    $post = Post::find(1);
+    $post->update([
+        'title' => 'updated title',
+        'content' => 'updated content'
+    ]);
+
 });
