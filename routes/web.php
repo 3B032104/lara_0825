@@ -16,6 +16,7 @@ use App\Models\Post;
 
 Route::get('/', function () {
     //return view('welcome');
+
     /* use save() add new data
     $post = new Post();
     $post -> title = 'test title';
@@ -23,19 +24,22 @@ Route::get('/', function () {
     $post -> save(); //將新貼文 $post 存入 posts table
     return 'save, ok.';
     */
+
     /* use create() add new data
     Post::create([
         'title' => 'created title',
         'content' => 'created content',
     ]);
     */
-    /*
-    $post = Post::find(1); //尋找posts table id = 1 data
+
+    /* use find() select posts table id = 1 data
+    $post = Post::find(1); //
     echo '標題：' . $post -> title . '<br>';
     echo '內容：' . $post -> content . '<br>';
     dd($post); //dump and die
     */
 
+    /* use all() select posts table all data
     $post = new Post();
     $posts = Post::all(); //take out all post data
     foreach ($posts as $post){
@@ -45,5 +49,10 @@ Route::get('/', function () {
         echo '張貼時間：' . $post -> created_at . '<br>';
         echo '----------------------------' . '<br>';
     }
-    dd($post);
+    dd($posts);
+    */
+    
+    //use where select posts table id < 10 data
+    $posts = Post::where('id', '<', 10) -> orderby('id', 'DESC')->get();
+    dd($posts);
 });
