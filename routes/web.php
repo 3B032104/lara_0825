@@ -65,11 +65,23 @@ Route::get('/', function () {
     ]);
     */
 
-    //use save() update posts table data
+    /*use save() update posts table data
     $post = Post::find(1);
     $post -> title = 'saved title';
     $post -> content = 'saved content';
     $post -> save();
+    */
 
+    /*use delete() delete posts table id is 1 data
+    $post = Post::find(1);
+    $post -> delete();
+    */
 
+    /*use destroy() delete posts table id is 2 data
+    Post::destroy(2);
+    */
+
+    /*use destroy() delete posts table id is 3,5,7 data
+    Post::destroy(3, 5, 7);
+    */
 });
