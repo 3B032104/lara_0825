@@ -85,7 +85,11 @@ Route::get('/', function () {
     Post::destroy(3, 5, 7);
     */
 
-    /*A collection of multiple articles*/
+    /*A collection of multiple articles
     $allPosts = Post::all();
     dd($allPosts);
+    */
+
+    $featuredPosts = Post::where('is_feature', 1) -> get();
+    dd($featuredPosts);
 });
