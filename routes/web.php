@@ -95,7 +95,12 @@ Route::get('/', function () {
     dd($featuredPosts);
     */
 
-    /*Get a single post*/
+    /*Get a single post
     $fourthPost = Post::find(4);
     dd($fourthPost);
+    */
+
+    /*Get a single post, first() */
+    $lastPost = Post::orderBy('id', 'DESC') -> first();
+    dd($lastPost);
 });
