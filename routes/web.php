@@ -122,7 +122,8 @@ Route::get('/', function () {
     $comment = Comment::find(6);
     echo '內容：' . $comment -> content . '<br>';
     echo '---------------------------' . '<br>';
-    $post = $comment -> post() -> first();
+    //$post = $comment -> post() -> first();
+    $post = $comment -> post;
     echo '編號：' . $post -> id . '<br>';
     echo '標題：' . $post -> title . '<br>';
     echo '內容：' . $post -> content . '<br>';
