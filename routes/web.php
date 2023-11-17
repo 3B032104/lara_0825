@@ -90,6 +90,12 @@ Route::get('/', function () {
     dd($allPosts);
     */
 
+    /*A collection of multiple articles, where()
     $featuredPosts = Post::where('is_feature', 1) -> get();
     dd($featuredPosts);
+    */
+
+    /*Get a single post*/
+    $fourthPost = Post::find(4);
+    dd($fourthPost);
 });
