@@ -84,4 +84,8 @@ Route::get('/', function () {
     /*use destroy() delete posts table id is 3,5,7 data
     Post::destroy(3, 5, 7);
     */
+
+    /*A collection of multiple articles*/
+    $allPosts = Post::all();
+    dd($allPosts);
 });
