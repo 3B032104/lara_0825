@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-
+use App\Models\comment;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -105,7 +105,7 @@ Route::get('/', function () {
     dd($lastPost);
     */
 
-    /*Post 透過 comments() 擷取其所有評論$comments*/
+    /*Post 透過 comments() 擷取其所有評論$comments
     $post = Post::find(6);
     echo '標題：' . $post -> title . '<br>';
     echo '內容：' . $post -> content . '<br>';
@@ -116,4 +116,14 @@ Route::get('/', function () {
         echo '留言：' . $comment -> content . '<br>';
         echo '#######################' . '<br>';
     }
+    */
+
+    /*Comment 透過 post() 擷取所屬的貼文 $post */
+    $comment = Comment::find(6);
+    echo '內容：' . $comment -> content . '<br>';
+    echo '---------------------------' . '<br>';
+    $post = $comment -> post() -> first();
+    echo '編號：' . $post -> id . '<br>';
+    echo '標題：' . $post -> title . '<br>';
+    echo '內容：' . $post -> content . '<br>';
 });
